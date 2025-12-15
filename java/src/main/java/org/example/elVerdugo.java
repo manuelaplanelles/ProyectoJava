@@ -1,5 +1,3 @@
-package org.example;
-
 import java.util.Scanner;
 
 /**
@@ -21,17 +19,17 @@ public class elVerdugo {
         System.out.println("  ║   " + (fallos >= 1 ? "😵" : " "));
 
         if (fallos >= 4) {
-            System.out.println("  ║  /|\\");
+            System.out.println("  ║  /O\\");
         } else if (fallos >= 3) {
-            System.out.println("  ║  /|");
+            System.out.println("  ║  /O");
         } else if (fallos >= 2) {
-            System.out.println("  ║   |");
+            System.out.println("  ║   O");
         } else {
             System.out.println("  ║    ");
         }
 
         if (fallos >= 6) {
-            System.out.println("  ║  / \\");
+            System.out.println("  ║  / ");
         } else if (fallos >= 5) {
             System.out.println("  ║  /");
         } else {
@@ -119,7 +117,8 @@ public class elVerdugo {
         System.out.println("    🎮 JUEGO DEL AHORCADO 🎮");
         System.out.println("═══════════════════════════════════");
 
-        System.out.print("Introduce la palabra secreta: ");
+
+        System.out.print("Introduce la primera letra: ");
         String palabra = teclado.nextLine().toLowerCase();
 
         // "Limpiar" pantalla
@@ -176,9 +175,6 @@ public class elVerdugo {
                 letrasFalladas = letrasFalladas + intento;
                 fallos++;
             }
-
-            // Sin pausa - directamente continúa
-            System.out.println(); // Solo un salto de línea
         }
 
         if (fallos >= 7) {
