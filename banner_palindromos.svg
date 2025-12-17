@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <!-- Definiciones -->
+  <defs>
+    <!-- Degradado de fondo -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Degradado para acentos azul-morado -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#533483;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#7b2cbf;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#5a189a;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Degradado para texto -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Brillo sutil -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#7b2cbf;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#7b2cbf;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Brillo de fondo -->
+  <circle cx="600" cy="150" r="400" fill="url(#glowGradient)"/>
+  
+  <!-- Líneas decorativas superiores -->
+  <line x1="0" y1="20" x2="400" y2="20" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="800" y1="20" x2="1200" y2="20" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Líneas decorativas inferiores -->
+  <line x1="0" y1="280" x2="400" y2="280" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  <line x1="800" y1="280" x2="1200" y2="280" stroke="url(#accentGradient)" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Llaves decorativas izquierda -->
+  <text x="80" y="100" font-family="'Courier New', monospace" font-size="80" fill="url(#accentGradient)" opacity="0.2">{</text>
+  <text x="80" y="240" font-family="'Courier New', monospace" font-size="80" fill="url(#accentGradient)" opacity="0.2">}</text>
+  
+  <!-- Llaves decorativas derecha -->
+  <text x="1070" y="100" font-family="'Courier New', monospace" font-size="80" fill="url(#accentGradient)" opacity="0.2">{</text>
+  <text x="1070" y="240" font-family="'Courier New', monospace" font-size="80" fill="url(#accentGradient)" opacity="0.2">}</text>
+  
+  <!-- Patrón de código (fondo sutil) -->
+  <text x="200" y="60" font-family="'Courier New', monospace" font-size="12" fill="#ffffff" opacity="0.08">public class Palindromo {</text>
+  <text x="200" y="260" font-family="'Courier New', monospace" font-size="12" fill="#ffffff" opacity="0.08">}</text>
+  
+  <!-- Símbolos de palindromo (texto reflejado) -->
+  <g opacity="0.15">
+    <text x="950" y="160" font-family="Arial, sans-serif" font-size="40" fill="#00d4ff">ANA</text>
+    <text x="180" y="160" font-family="Arial, sans-serif" font-size="40" fill="#00d4ff" transform="scale(-1, 1) translate(-360, 0)">ANA</text>
+  </g>
+  
+  <!-- Flechas simétricas -->
+  <path d="M 350 150 L 420 150 L 410 140 M 420 150 L 410 160" stroke="url(#accentGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M 850 150 L 780 150 L 790 140 M 780 150 L 790 160" stroke="url(#accentGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <!-- Texto principal -->
+  <g>
+    <!-- ProyectoJava -->
+    <text x="600" y="120" 
+          font-family="'Segoe UI', 'Roboto', Arial, sans-serif" 
+          font-size="56" 
+          font-weight="bold" 
+          fill="url(#textGradient)" 
+          text-anchor="middle">
+      ProyectoJava
+    </text>
+    
+    <!-- Subtítulo -->
+    <text x="600" y="165" 
+          font-family="'Segoe UI', 'Roboto', Arial, sans-serif" 
+          font-size="28" 
+          fill="#ffffff" 
+          text-anchor="middle"
+          opacity="0.9">
+      Palíndromos en Java
+    </text>
+    
+    <!-- Problema 252 -->
+    <text x="600" y="200" 
+          font-family="'Courier New', monospace" 
+          font-size="16" 
+          fill="#00d4ff" 
+          text-anchor="middle"
+          opacity="0.7">
+      Problema #252: ¿Acaso hubo búhos acá?
+    </text>
+  </g>
+  
+  <!-- Decoración inferior: línea de código -->
+  <rect x="450" y="230" width="300" height="2" fill="url(#accentGradient)" opacity="0.5"/>
+  
+  <!-- Puntos decorativos -->
+  <circle cx="440" cy="231" r="4" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="760" cy="231" r="4" fill="#a855f7" opacity="0.6"/>
+  
+</svg>

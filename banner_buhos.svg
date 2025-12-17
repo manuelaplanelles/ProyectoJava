@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300">
+  <defs>
+    <!-- Degradado fondo -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1b4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0b2e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Degradado texto -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8b4f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a8dadc;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Luna brillante -->
+    <radialGradient id="moon" cx="50%" cy="50%">
+      <stop offset="0%" style="stop-color:#ffd93d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fcbf49;stop-opacity:0.8" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  
+  <!-- Estrellas -->
+  <circle cx="100" cy="50" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="250" cy="80" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="180" cy="120" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="1050" cy="60" r="2" fill="#ffffff" opacity="0.8"/>
+  <circle cx="950" cy="90" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="1100" cy="110" r="1" fill="#ffffff" opacity="0.7"/>
+  
+  <!-- Luna -->
+  <circle cx="150" cy="80" r="35" fill="url(#moon)" opacity="0.9"/>
+  <circle cx="160" cy="75" r="30" fill="#2d1b4e" opacity="0.3"/>
+  
+  <!-- BÚHO IZQUIERDO -->
+  <g transform="translate(200, 140)">
+    <!-- Cuerpo -->
+    <ellipse cx="0" cy="20" rx="35" ry="45" fill="#8b7355" opacity="0.9"/>
+    <!-- Cara -->
+    <circle cx="0" cy="0" r="28" fill="#a89078" opacity="0.95"/>
+    <!-- Ojos fondo -->
+    <ellipse cx="-10" cy="-2" rx="10" ry="12" fill="#f8f9fa"/>
+    <ellipse cx="10" cy="-2" rx="10" ry="12" fill="#f8f9fa"/>
+    <!-- Pupilas -->
+    <circle cx="-10" cy="-2" r="6" fill="#2d1b4e"/>
+    <circle cx="10" cy="-2" r="6" fill="#2d1b4e"/>
+    <!-- Brillo ojos -->
+    <circle cx="-8" cy="-4" r="2" fill="#ffffff" opacity="0.8"/>
+    <circle cx="12" cy="-4" r="2" fill="#ffffff" opacity="0.8"/>
+    <!-- Pico -->
+    <path d="M -3,8 L 0,12 L 3,8 Z" fill="#f4a460"/>
+    <!-- Orejas -->
+    <path d="M -20,-20 L -15,-10 L -22,-12 Z" fill="#8b7355"/>
+    <path d="M 20,-20 L 15,-10 L 22,-12 Z" fill="#8b7355"/>
+    <!-- Alas -->
+    <ellipse cx="-25" cy="25" rx="8" ry="20" fill="#7d6855" opacity="0.8"/>
+    <ellipse cx="25" cy="25" rx="8" ry="20" fill="#7d6855" opacity="0.8"/>
+  </g>
+  
+  <!-- BÚHO DERECHO (espejo) -->
+  <g transform="translate(1000, 140)">
+    <!-- Cuerpo -->
+    <ellipse cx="0" cy="20" rx="35" ry="45" fill="#8b7355" opacity="0.9"/>
+    <!-- Cara -->
+    <circle cx="0" cy="0" r="28" fill="#a89078" opacity="0.95"/>
+    <!-- Ojos fondo -->
+    <ellipse cx="-10" cy="-2" rx="10" ry="12" fill="#f8f9fa"/>
+    <ellipse cx="10" cy="-2" rx="10" ry="12" fill="#f8f9fa"/>
+    <!-- Pupilas -->
+    <circle cx="-10" cy="-2" r="6" fill="#2d1b4e"/>
+    <circle cx="10" cy="-2" r="6" fill="#2d1b4e"/>
+    <!-- Brillo ojos -->
+    <circle cx="-8" cy="-4" r="2" fill="#ffffff" opacity="0.8"/>
+    <circle cx="12" cy="-4" r="2" fill="#ffffff" opacity="0.8"/>
+    <!-- Pico -->
+    <path d="M -3,8 L 0,12 L 3,8 Z" fill="#f4a460"/>
+    <!-- Orejas -->
+    <path d="M -20,-20 L -15,-10 L -22,-12 Z" fill="#8b7355"/>
+    <path d="M 20,-20 L 15,-10 L 22,-12 Z" fill="#8b7355"/>
+    <!-- Alas -->
+    <ellipse cx="-25" cy="25" rx="8" ry="20" fill="#7d6855" opacity="0.8"/>
+    <ellipse cx="25" cy="25" rx="8" ry="20" fill="#7d6855" opacity="0.8"/>
+  </g>
+  
+  <!-- Rama izquierda -->
+  <rect x="170" y="195" width="80" height="8" rx="4" fill="#5d4e37" opacity="0.7"/>
+  
+  <!-- Rama derecha -->
+  <rect x="950" y="195" width="80" height="8" rx="4" fill="#5d4e37" opacity="0.7"/>
+  
+  <!-- Flechas simétricas -->
+  <g opacity="0.5">
+    <path d="M 320 150 L 420 150 M 410 140 L 420 150 L 410 160" stroke="#e8b4f0" stroke-width="3" fill="none"/>
+    <path d="M 880 150 L 780 150 M 790 140 L 780 150 L 790 160" stroke="#e8b4f0" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Texto central -->
+  <g>
+    <!-- Título principal -->
+    <text x="600" y="110" 
+          font-family="'Georgia', serif" 
+          font-size="52" 
+          font-weight="bold" 
+          fill="url(#textGrad)" 
+          text-anchor="middle">
+      ¿Acaso hubo búhos acá?
+    </text>
+    
+    <!-- Subtítulo -->
+    <text x="600" y="155" 
+          font-family="'Segoe UI', sans-serif" 
+          font-size="24" 
+          fill="#a8dadc" 
+          text-anchor="middle"
+          opacity="0.9">
+      Detector de Palíndromos
+    </text>
+    
+    <!-- Problema -->
+    <text x="600" y="190" 
+          font-family="'Courier New', monospace" 
+          font-size="16" 
+          fill="#e8b4f0" 
+          text-anchor="middle"
+          opacity="0.7">
+      Problema #252 • Java • 1º DAW
+    </text>
+  </g>
+  
+  <!-- Línea decorativa inferior -->
+  <line x1="400" y1="220" x2="800" y2="220" stroke="#e8b4f0" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Texto espejo sutil -->
+  <text x="600" y="260" 
+        font-family="'Courier New', monospace" 
+        font-size="14" 
+        fill="#ffffff" 
+        text-anchor="middle"
+        opacity="0.2">
+    ANA • OSO • RADAR • ANITALAVALATINA
+  </text>
+</svg>
