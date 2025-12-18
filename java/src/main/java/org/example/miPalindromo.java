@@ -47,7 +47,26 @@ public class miPalindromo {
                         limpia=limpia+cart;
                     }
                 }
-                System.out.println(limpia);
+                limpia=limpia.toLowerCase();
+                //System.out.println(limpia);
+
+                int i = 0;
+                int j = limpia.length()-1;
+                boolean palindromo = true;
+
+                while (i<j){
+                    if (limpia.charAt(i) != limpia.charAt(j)) {
+                        palindromo = false;
+                        break;
+                    }
+                    i++;
+                    j--;
+                }
+                if (palindromo) {
+                    System.out.println("Si es un palindromo.");
+                } else {
+                    System.out.println("No es palindromo.");
+                }
             }
         }
     }
