@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class miPalindromo {
-      
+
         public static void main(String[]args) {
             Scanner teclado = new Scanner(System.in);
 
@@ -36,6 +36,18 @@ public class miPalindromo {
                         break;
                     }
                 }
+                if (cartInv){
+                    continue;
+                }
+
+                String limpia="";
+                for (int i = 0; i<frase.length(); i++){
+                    char cart = frase.charAt(i);
+                    if (cart != ' '){
+                        limpia=limpia+cart;
+                    }
+                }
+                System.out.println(limpia);
             }
         }
     }
