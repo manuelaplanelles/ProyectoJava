@@ -10,39 +10,30 @@ Manuela Planelles - 1º DAW - IES Mutxamel
 
 ## El Problema
 
-Como indica en el enunciado del problema Juan Filloy, un escritor argentino de 1894, se autoproclamó "recordman mundial de palindromía" con 
-más de 8.000 palíndromos españoles. Aunque hoy en día ese récord lo tiene Víctor Carbajo, un músico español que tiene más de 100.000 en su web.
+Como indica en el enunciado del problema, un escritor argentino de 1894, se autoproclamó "recordman mundial de palindromía" con 
+más de 8.000 palíndromos españoles. Aunque hoy en día ese récord lo tiene, un músico español que tiene más de 100.000 en su web.
 
 ### ¿Qué es un palíndromo?
 
 Es una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda, ignorando espacios, tildes y mayúsculas. 
-El título del problema, "¿Acaso hubo búhos acá?", es uno de los más famosos de Filloy. 
+El título del problema, "¿Acaso hubo búhos acá?", es uno de los más famosos del escritor argentino. 
 
 Otros ejemplos:
 
 - **somos** → se lee igual
-- **oso** → también
-- **La ruta natural** → si quitas los espacios y pones todo en minúsculas, también funciona
-
-
-### Ejemplos del problema
-
-| Entrada | Salida |
-|---------|--------|
-| Acaso hubo buhos aca | SI |
-| Querido muerto esta tarde llegamos | NO |
-
+- **La ruta natural** → si quitas los espacios y pones todo en minúsculas (larutanatural), también funciona.
+  
 ---
 
-## ¿Qué se pide?
+## ¿Qué se pide?.
 
-### La entrada
+### La entrada.
 
 El programa tiene que:
-1. Leer frases de teclado
-2. Cada frase puede tener hasta 100 caracteres
-3. Solo letras (a-z, A-Z) y espacios
-4. Cuando lea "XXX" tiene que parar
+1. Cada linea puede tener hasta 100 caracteres.
+2. Solo letras mayusculas o minusculas y espacios, sin signos ni tildes (alfabeti inglés).
+3. No puede empezas o terminar con espacios.
+4. Cuando lea "XXX" tiene que parar.
 
 ### La salida
 
