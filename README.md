@@ -8,18 +8,6 @@ Manuela Planelles - 1º DAW - IES Mutxamel
 
 ---
 
-## Índice
-
-- [El Problema](#el-problema)
-- [Qué tengo que hacer](#qué-tengo-que-hacer)
-- [Cómo lo he resuelto](#cómo-lo-he-resuelto)
-- [El código para el juez](#el-código-para-el-juez)
-- [Mi versión mejorada](#mi-versión-mejorada)
-- [Las pruebas](#las-pruebas)
-- [Lo que he aprendido](#lo-que-he-aprendido)
-
----
-
 ## El Problema
 
 Como indica en el enunciado del problema Juan Filloy, un escritor argentino de 1894, se autoproclamó "recordman mundial de palindromía" con 
