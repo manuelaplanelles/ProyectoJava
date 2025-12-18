@@ -94,57 +94,47 @@ Si "anitalavalatina" al revés es "anitalavalatina" → es palíndromo.
 
 ## El código para el juez
 
-He seguido la plantilla que recomiendan en Acepta el Reto (Esquema 2, el que se usa cuando hay un caso especial que marca el final).
+He seguido la plantilla oficial de Acepta el Reto (Esquema 2), la que se usa cuando hay un caso especial que marca el final.
 
 <details>
 <summary>Ver el código completo que envié al juez</summary>
 
 ```java
-public class Main {
-    
-    static java.util.Scanner in;
-    
-    public static boolean casoDePrueba() {
-        String frase = in.nextLine();
-        
-        if (frase.equals("XXX")) {
-            return false;
-        } else {
-            // Limpiar: quitar espacios y pasar a minúsculas
-            String limpia = "";
-            frase = frase.toLowerCase();
-            
-            for (int i = 0; i < frase.length(); i++) {
-                char c = frase.charAt(i);
-                if (c != ' ') {
-                    limpia = limpia + c;
+import java.util.Scanner;
+public class palindromosJuez {
+        static java.util.Scanner in;
+        public static boolean casoDePrueba() {
+            boolean igual = true;
+            String frase = in.nextLine();
+            if (frase.equals("XXX")){
+                return false;
+            }else {
+                int i = 0;
+                int j = frase.length() - 1;
+                while (i < j && igual) {
+                    while (i < j && frase.charAt(i) == ' ') i++;
+                    while (i < j && frase.charAt(j) == ' ') j--;
+                    if (Character.toLowerCase(frase.charAt(i)) == Character.toLowerCase(frase.charAt(j))) {
+                        j--;
+                        i++;
+                    } else {
+                        igual = false;
+                    }
+                }
+                if (igual) {
+                    System.out.println("SI");
+                } else {
+                    System.out.println("NO");
                 }
             }
-            
-            // Invertir
-            String invertida = "";
-            for (int i = limpia.length() - 1; i >= 0; i--) {
-                invertida = invertida + limpia.charAt(i);
-            }
-            
-            // Comparar
-            if (limpia.equals(invertida)) {
-                System.out.println("SI");
-            } else {
-                System.out.println("NO");
-            }
-            
             return true;
         }
-    }
-    
-    public static void main(String[] args) {
-        in = new java.util.Scanner(System.in);
-        
-        while (casoDePrueba()) {
+        public static void main(String[] args) {
+            in = new java.util.Scanner(System.in);
+            while (casoDePrueba()) {
+            }
         }
     }
-}
 ```
 
 </details>
