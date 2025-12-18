@@ -160,12 +160,15 @@ public class Main {
 
 ### El resultado
 
-El juez me lo aceptó a la primera:
+"Al principio mi código daba Presentation Error porque imprimía mensajes al usuario. Después de eliminarlos, seguía dando Wrong Answer porque tenía equalsIgnoreCase() en lugar de equals() y líneas en blanco extra. Una vez corregido, el juez lo aceptó."
+
+![Veredicto ACCEPTED](accepted_veredicto.png)
 
 ```
 ✅ ACCEPTED
-Tiempo: 0.234s
-Memoria: 12.5 MB
+Tiempo: 0.135 segundos
+Memoria: 1417 KiB
+Posición: 934
 ```
 
 
