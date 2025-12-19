@@ -365,10 +365,8 @@ He documentado los tres métodos con Javadoc.
 
 En este apartado no he conseguido generar la documentación, me aparecia error y he probado varias rutas de carpetas, y me daba el mismo error.
 
----
-El programa tiene que:
----
 ![Documentación](javadoc.jpg)
+
 ---
 
 ### Dificultades que tuve
