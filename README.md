@@ -369,10 +369,6 @@ En este apartado no he conseguido generar la documentación, me aparecia error y
 
 ---
 
-### Dificultades que tuve
-
-
-
 
 ---
 
