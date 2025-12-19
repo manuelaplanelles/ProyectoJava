@@ -169,7 +169,7 @@ public class proyecto.palindromosJuez {
 
 ### El resultado
 
-"Al principio mi código daba Presentation Error porque imprimía mensajes al usuario. Después de eliminarlos, seguía dando Wrong Answer porque tenía equalsIgnoreCase() en lugar de equals() y líneas en blanco extra. Una vez corregido, el juez lo aceptó."
+"Al principio mi código daba Presentation Error porque imprimía mensajes al usuario. Después de eliminarlos, seguía dando Wrong Answer porque tenía equalsIgnoreCase() en lugar de equals(). Una vez corregido, el juez lo aceptó."
 
 ![Veredicto ACCEPTED](accepted_veredicto.png)
 
