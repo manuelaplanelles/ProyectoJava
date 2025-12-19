@@ -9,15 +9,15 @@ class AcasoHuboBuhosAcaTest {
      void ValidarYLimpiar() {
         String input = "Acaso Hubo Buhos Aca";
         String expected = "acasohubobuhosaca";
-        String result = AcasoHuboBuhosAca.ValidarYLimpiar(input);
+        String result = AcasoHuboBuhosAca.validarYLimpiar(input);
         assertEquals(expected, result, "La frase no se limpió correctamente.");
     }
 
     @Test
     void RecorrerPalindromo() {
         String palindromo = "acasohubobuhosaca";
-        assertTrue(AcasoHuboBuhosAca.RecorrerPalindromo(palindromo), "Debe ser un palíndromo.");
+        assertTrue(AcasoHuboBuhosAca.recorrerPalindromo(palindromo), "Debe ser un palíndromo.");
         String noPalindromo = "hola mundo";
-        assertFalse(AcasoHuboBuhosAca.RecorrerPalindromo(noPalindromo), "No debe ser un palíndromo.");
+        assertFalse(AcasoHuboBuhosAca.recorrerPalindromo(noPalindromo), "No debe ser un palíndromo.");
     }
 }

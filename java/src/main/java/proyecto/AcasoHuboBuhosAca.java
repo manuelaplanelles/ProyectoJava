@@ -25,13 +25,13 @@ public class AcasoHuboBuhosAca {
                 break;
             }
 
-            String limpia = ValidarYLimpiar(frase); //metdo1
+            String limpia = validarYLimpiar(frase); //metdo1
 
             if (limpia == null) {
                 continue;
             }
 
-            boolean palindromo = RecorrerPalindromo(limpia); //metodo2
+            boolean palindromo = recorrerPalindromo(limpia); //metodo2
 
             if (palindromo) {
                 System.out.println("Si es un palindromo.");
@@ -49,7 +49,7 @@ public class AcasoHuboBuhosAca {
      * @return: La frase limpia y en minúsculas, o null si hay un error de validación.
      */
 
-    static String ValidarYLimpiar(String frase) {
+    public static String validarYLimpiar(String frase) {
         int longitud = frase.length();
 
         if (longitud == 0 || longitud > 100) {
@@ -93,7 +93,7 @@ public class AcasoHuboBuhosAca {
      * @return: true si la cadena es un palíndromo, false en caso contrario.
      */
 
-    static boolean RecorrerPalindromo(String limpia) {
+    public static boolean recorrerPalindromo(String limpia) {
         int i = 0;
         int j = limpia.length() - 1;
         boolean palindromo = true;
