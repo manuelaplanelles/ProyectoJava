@@ -20,12 +20,12 @@ El título del problema, "¿Acaso hubo búhos acá?", es uno de los más famosos
 
 Otros ejemplos:
 
-- **somos** → se lee igual
+- **somos** → se lee igual.
 - **La ruta natural** → si quitas los espacios y pones todo en minúsculas (larutanatural), también funciona.
   
 ---
 
-## ¿Qué se pide?.
+## ¿Qué se pide?
 
 ### La entrada.
 
@@ -35,11 +35,11 @@ El programa tiene que:
 3. No puede empezas o terminar con espacios.
 4. Cuando lea "XXX" tiene que parar.
 
-### La salida
+### La salida.
 
 Para cada frase escribo:
-- **SI** si es palíndromo
-- **NO** si no lo es
+- **SI** si es palíndromo.
+- **NO** si no lo es.
 
 ---
 
@@ -47,48 +47,76 @@ Para cada frase escribo:
 
 Mi idea ha sido dividirlo en 3 pasos:
 
-### 1. LEER la frase
+### 1. LEER LA FRASE
 ```java
+System.out.println("Introduce tu frase: ");
 String frase = teclado.nextLine();
 ```
 
-### 2. LIMPIAR
-Quito los espacios y paso todo a minúsculas:
+### 2. LIMPIAR Y VALIDAR.
+La longitud este entre 0 y 100, que la frase no empiece ni termine con espacios, que solo se introduzcan caracteres simples (sin acentos) y espacios, comprobado quitamos los espacios y en minuscula lista para recorerla y comparar.
 ```java
-String limpia = "";
-frase = frase.toLowerCase();
+        int longitud = frase.length();
 
-for (int i = 0; i < frase.length(); i++) {
-    if (frase.charAt(i) != ' ') {
-        limpia = limpia + frase.charAt(i);
-    }
-}
+        if (longitud == 0 || longitud > 100) {
+            System.out.println("Error: La frase debe tener entre 1 y 100 caracteres.");
+            return null;
+        }
+
+        if (frase.charAt(0) == ' ' || frase.charAt(longitud - 1) == ' ') {
+            System.out.println("Error: La frase no puede empezar ni terminar con espacios.");
+            return null;
+        }
+
+        boolean cartInv = false;
+        for (int i = 0; i < longitud; i++) {
+            char cart = frase.charAt(i);
+            if (!((cart >= 'a' && cart <= 'z') || (cart >= 'A' && cart <= 'Z') || cart == ' ')) {
+                System.out.println("Error: Solo letras inglesas y espacios.");
+                cartInv = true;
+                break;
+            }
+        }
+        if (cartInv) {
+            return null;
+        }
+
+        String limpia = "";
+        for (int i = 0; i < frase.length(); i++) {
+            char cart = frase.charAt(i);
+            if (cart != ' ') {
+                limpia = limpia + cart;
+            }
+        }
+        limpia = limpia.toLowerCase();
+        return limpia;
 ```
 
 Por ejemplo:
 ```
-"Anita lava la tina"
+"La ruta natural"
     ↓
-"anita lava la tina"  (minúsculas)
+"la ruta natural"  (minúsculas)
     ↓
-"anitalavalatina"     (sin espacios)
+"larutanatural"     (sin espacios)
 ```
 
 ### 3. INVERTIR y COMPARAR
 ```java
-String invertida = "";
-for (int i = limpia.length() - 1; i >= 0; i--) {
-    invertida = invertida + limpia.charAt(i);
-}
+        int i = 0;
+        int j = limpia.length() - 1;
+        boolean palindromo = true;
 
-if (limpia.equals(invertida)) {
-    System.out.println("SI");
-} else {
-    System.out.println("NO");
-}
+        while (i < j) {
+            if (limpia.charAt(i) != limpia.charAt(j)) {
+                palindromo = false;
+                break;
+            }
+            i++;
+            j--;
 ```
 
-Si "anitalavalatina" al revés es "anitalavalatina" → es palíndromo.
+Si "larutanatural" al revés es "larutanatural" → es palíndromo.
 
 ---
 
@@ -146,10 +174,10 @@ public class palindromosJuez {
 ![Veredicto ACCEPTED](accepted_veredicto.png)
 
 ```
-✅ ACCEPTED
-Tiempo: 0.135 segundos
-Memoria: 1417 KiB
-Posición: 934
+✅ ACCEPTED.
+Tiempo: 0.135 segundos.
+Memoria: 1417 KiB.
+Posición: 934.
 ```
 
 
@@ -157,78 +185,98 @@ Posición: 934
 
 ## Mi versión bonita
 
-Para la presentación he hecho una versión más elaborada, con lo dado en clase dividiendo el código en métodos, con JavaDoc y JUnit.
+Para el proyecto he hecho una versión más "elaborada", con lo dado en clase dividiendo el código en métodos, con JavaDoc y JUnit.
+Para ello primero he generado el codigo como lo creabamos en la primera evaluacion sin metodos, y desde ahi lo he dividido por metodos.
 
 <details>
-<summary>Ver la versión con módulos</summary>
+<summary>Ver la versión con módulos y JavaDoc.</summary>
 
 ```java
 import java.util.Scanner;
 
-public class Palindromo {
-    
+public class AcasoHuboBuhosAca {
+
     static Scanner teclado = new Scanner(System.in);
-    
-    // Lee una frase del usuario
-    public static String leerFrase() {
-        System.out.print("Escribe una frase (XXX para salir): ");
-        return teclado.nextLine();
-    }
-    
-    // Quita espacios y pasa a minúsculas
-    public static String limpiarFrase(String frase) {
-        String limpia = "";
-        frase = frase.toLowerCase();
-        
-        for (int i = 0; i < frase.length(); i++) {
-            char c = frase.charAt(i);
-            if (c != ' ') {
-                limpia = limpia + c;
+
+    public static void main(String[] args) {
+        System.out.println("--- DETECTOR DE PALÍNDROMOS ---");
+        System.out.println("Escribe XXX para terminar");
+
+        while (true) {
+            System.out.println("Introduce tu frase: ");
+            String frase = teclado.nextLine();
+
+            if (frase.equalsIgnoreCase("XXX")) {
+                break;
+            }
+
+            String limpia = ValidarYLimpiar(frase); //metdo1
+
+            if (limpia == null) {
+                continue;
+            }
+
+            boolean palindromo = RecorrerPalindromo(limpia); //metodo2
+
+            if (palindromo) {
+                System.out.println("Si es un palindromo.");
+            } else {
+                System.out.println("No es palindromo.");
             }
         }
-        
+    }
+
+    static String ValidarYLimpiar(String frase) {
+        int longitud = frase.length();
+
+        if (longitud == 0 || longitud > 100) {
+            System.out.println("Error: La frase debe tener entre 1 y 100 caracteres.");
+            return null;
+        }
+
+        if (frase.charAt(0) == ' ' || frase.charAt(longitud - 1) == ' ') {
+            System.out.println("Error: La frase no puede empezar ni terminar con espacios.");
+            return null;
+        }
+
+        boolean cartInv = false;
+        for (int i = 0; i < longitud; i++) {
+            char cart = frase.charAt(i);
+            if (!((cart >= 'a' && cart <= 'z') || (cart >= 'A' && cart <= 'Z') || cart == ' ')) {
+                System.out.println("Error: Solo letras inglesas y espacios.");
+                cartInv = true;
+                break;
+            }
+        }
+        if (cartInv) {
+            return null;
+        }
+
+        String limpia = "";
+        for (int i = 0; i < frase.length(); i++) {
+            char cart = frase.charAt(i);
+            if (cart != ' ') {
+                limpia = limpia + cart;
+            }
+        }
+        limpia = limpia.toLowerCase();
         return limpia;
     }
-    
-    // Le da la vuelta a la cadena
-    public static String invertirCadena(String cadena) {
-        String invertida = "";
-        
-        for (int i = cadena.length() - 1; i >= 0; i--) {
-            invertida = invertida + cadena.charAt(i);
-        }
-        
-        return invertida;
-    }
-    
-    // Comprueba si es palíndromo
-    public static boolean esPalindromo(String frase) {
-        String limpia = limpiarFrase(frase);
-        String invertida = invertirCadena(limpia);
-        
-        return limpia.equals(invertida);
-    }
-    
-    public static void main(String[] args) {
-        System.out.println("=== DETECTOR DE PALÍNDROMOS ===\n");
-        
-        String frase;
-        
-        do {
-            frase = leerFrase();
-            
-            if (!frase.equals("XXX")) {
-                if (esPalindromo(frase)) {
-                    System.out.println("✅ SI\n");
-                } else {
-                    System.out.println("❌ NO\n");
-                }
+
+    static boolean RecorrerPalindromo(String limpia) {
+        int i = 0;
+        int j = limpia.length() - 1;
+        boolean palindromo = true;
+
+        while (i < j) {
+            if (limpia.charAt(i) != limpia.charAt(j)) {
+                palindromo = false;
+                break;
             }
-            
-        } while (!frase.equals("XXX"));
-        
-        System.out.println("¡Hasta luego!");
-        teclado.close();
+            i++;
+            j--;
+        }
+        return palindromo;
     }
 }
 ```
@@ -240,93 +288,91 @@ public class Palindromo {
 
 ### Pruebas manuales
 
-He probado con varios casos:
+He probado con varios casos, la entradas y salidas y cada una de las validaciones:
 
-| Entrada | Resultado | ¿Funciona? |
-|---------|-----------|------------|
-| Somos | SI | ✅ |
-| oso | SI | ✅ |
-| radar | SI | ✅ |
-| hola | NO | ✅ |
-| La ruta natural | SI | ✅ |
-| Acaso hubo buhos aca | SI | ✅ |
+![Pruebas](pruebas.jpg)
 
 ### Tests con JUnit
 
-También he creado tests automáticos para asegurarme de que todo funciona:
+También he creado tests automáticos Junit. Aqui he tenido varias complicaciones, al principo no me cogia el tipo de prueba y no me aparecia el formato como los apuntes, los he escrito de forma manual, no tengo claro si es la forma correcta, pero me ha funcionado.
 
 ```java
-@Test
-public void testPalindromosSimples() {
-    assertTrue(esPalindromo("Somos"));
-    assertTrue(esPalindromo("oso"));
-    assertTrue(esPalindromo("radar"));
-}
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
-@Test
-public void testPalindromosConEspacios() {
-    assertTrue(esPalindromo("La ruta natural"));
-}
+class AcasoHuboBuhosAcaTest {
 
-@Test
-public void testNoPalindromos() {
-    assertFalse(esPalindromo("hola"));
+    @Test
+    void ValidarYLimpiar() {
+        String input = "Acaso Hubo Buhos Aca";
+        String expected = "acasohubobuhosaca";
+        String result = AcasoHuboBuhosAca.ValidarYLimpiar(input);
+        assertEquals(expected, result, "La frase no se limpió correctamente.");
+    }
+
+    @Test
+    void RecorrerPalindromo() {
+        String palindromo = "acasohubobuhosaca";
+        assertTrue(AcasoHuboBuhosAca.RecorrerPalindromo(palindromo), "Debe ser un palíndromo.");
+        String noPalindromo = "hola mundo";
+        assertFalse(AcasoHuboBuhosAca.RecorrerPalindromo(noPalindromo), "No debe ser un palíndromo.");
+    }
 }
 ```
 
 Todos los tests pasaron correctamente.
-
+![Pruebas](junit_correcto.jpg)
 ---
-
-## Lo que he aprendido
-
-### Conceptos de programación que he usado
-
-**Del tema 2 (Estructuras de control):**
-- `while` para el bucle principal
-- `for` para recorrer las cadenas
-- `if-else` para las decisiones
-- `return` para salir de métodos
-
-**Del tema 3 (Strings):**
-- `charAt()` para acceder a cada letra
-- `length()` para saber el tamaño
-- `toLowerCase()` para pasar a minúsculas
-- `equals()` para comparar
-
-**Del tema 4 (Métodos):**
-- Crear métodos propios
-- Pasar parámetros
-- Devolver valores
-- Documentar con Javadoc
-
-### Dificultades que tuve
-
-1. **Al principio** intenté hacerlo más complicado, comparando carácter por carácter desde los extremos. Al final me di cuenta de que era más sencillo invertir la cadena completa.
-
-2. **Los espacios** me dieron un poco de guerra. Tenía que acordarme de quitarlos antes de comparar.
-
-3. **Las mayúsculas** también, pero con `toLowerCase()` se solucionó fácil.
-
-
+Tambien realice test incorrectos para comprobar el funcionamiento.
+![Pruebas](junit_incorrect.jpg)
 ---
 
 ## Documentación
 
-He documentado todos los métodos con Javadoc, por ejemplo:
+He documentado los tres métodos con Javadoc. 
+
 
 ```java
-/**
- * Limpia una frase quitando espacios y pasando a minúsculas
- * @param frase la frase original
- * @return la frase limpia
- */
-public static String limpiarFrase(String frase) {
-    // ...
-}
-```
 
-Esto hace que si alguien usa mi código, sepa qué hace cada método.
+    /**
+     * Esta clase contiene los métodos necesarios para resolver el problema 252 Acaso Hubo Buho Aca - Palíndromos del Concurso ProgramaMe para el proyecto de la asignatura de programacion de 1ºDAW.
+     * @author: Manuela Planelles
+     * @version: 1.0 (19/12/2025)
+     * @see <a href = "https://aceptaelreto.com/problem/statement.php?id=252"/> Acaso Hubo Buho Aca </a>
+     */
+    public static void main(String[] args) {
+```
+```java
+    /**
+     * Valída y limpia la frase proporcionada por el usuario.
+     * Revisa si la frase tiene entre 1 y 100 caracteres, y si está bien formada (sin caracteres inválidos o espacios al principio o al final).
+     * Elimina los espacios para facilitar la comprobación del palíndromo.
+     * @param frase
+     * @return La frase limpia y en minúsculas, o null si hay un error de validación.
+     */
+    static String ValidarYLimpiar(String frase) {
+```
+```java
+    /**
+     * Verifica si la cadena de texto proporcionada es un palíndromo.
+     * Compara los caracteres de la cadena desde ambos extremos hacia el centro.
+     * @param limpia
+     * @return true si la cadena es un palíndromo, false en caso contrario.
+     */
+    static boolean RecorrerPalindromo(String limpia) {
+```
+### Error de Javadoc.
+
+En este apartado no he conseguido generar la documentación, me aparecia error y he probado varias rutas de carpetas, y me daba el mismo error.
+
+![Documentación](javadoc.jpg)
+
+---
+
+### Dificultades que tuve
+
+
+
 
 ---
 
