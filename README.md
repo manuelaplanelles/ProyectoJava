@@ -329,7 +329,8 @@ Tambien realice test incorrectos para comprobar el funcionamiento.
 
 ## Documentación
 
-He documentado los tres métodos con Javadoc:
+He documentado los tres métodos con Javadoc. 
+En este apartado no he conseguido generar la documentación, me aparecia el siguiente error y he probado varias rutas de carpetas, y me daba el mismo error.
 
 ```java
 
@@ -360,9 +361,7 @@ He documentado los tres métodos con Javadoc:
      */
     static boolean RecorrerPalindromo(String limpia) {
 ```
-## Documentación
 
-En este apartado no he conseguido generar la documentación, me aparecia el siguiente error y he probado varias rutas de carpetas, y me daba el mismo error.
 ---
 ![Documentación](javadoc.jpg)
 ---
