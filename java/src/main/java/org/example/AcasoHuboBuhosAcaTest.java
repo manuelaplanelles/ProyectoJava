@@ -1,10 +1,12 @@
 import org.junit.jupiter.api.Test;
+import proyecto.AcasoHuboBuhosAca;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AcasoHuboBuhosAcaTest {
 
     @Test
-    void ValidarYLimpiar() {
+     void ValidarYLimpiar() {
         String input = "Acaso Hubo Buhos Aca";
         String expected = "acasohubobuhosaca";
         String result = AcasoHuboBuhosAca.ValidarYLimpiar(input);

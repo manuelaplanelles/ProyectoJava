@@ -1,3 +1,5 @@
+package proyecto;
+
 import java.util.Scanner;
 
 public class miPalindromo {

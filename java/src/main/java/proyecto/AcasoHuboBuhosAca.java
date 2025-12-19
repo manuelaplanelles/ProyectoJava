@@ -1,3 +1,5 @@
+package proyecto;
+
 import java.util.Scanner;
 
 public class AcasoHuboBuhosAca {
@@ -43,8 +45,8 @@ public class AcasoHuboBuhosAca {
      * Valída y limpia la frase proporcionada por el usuario.
      * Revisa si la frase tiene entre 1 y 100 caracteres, y si está bien formada (sin caracteres inválidos o espacios al principio o al final).
      * Elimina los espacios para facilitar la comprobación del palíndromo.
-     * @param frase
-     * @return La frase limpia y en minúsculas, o null si hay un error de validación.
+     * @param: frase
+     * @return: La frase limpia y en minúsculas, o null si hay un error de validación.
      */
 
     static String ValidarYLimpiar(String frase) {
@@ -87,8 +89,8 @@ public class AcasoHuboBuhosAca {
     /**
      * Verifica si la cadena de texto proporcionada es un palíndromo.
      * Compara los caracteres de la cadena desde ambos extremos hacia el centro.
-     * @param limpia
-     * @return true si la cadena es un palíndromo, false en caso contrario.
+     * @param: limpia
+     * @return: true si la cadena es un palíndromo, false en caso contrario.
      */
 
     static boolean RecorrerPalindromo(String limpia) {

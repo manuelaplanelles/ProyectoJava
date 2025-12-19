@@ -129,7 +129,7 @@ He seguido la plantilla oficial de Acepta el Reto (Esquema 2), la que se usa cua
 
 ```java
 import java.util.Scanner;
-public class palindromosJuez {
+public class proyecto.palindromosJuez {
         static java.util.Scanner in;
         public static boolean casoDePrueba() {
             boolean igual = true;
@@ -194,7 +194,7 @@ Para ello primero he generado el codigo como lo creabamos en la primera evaluaci
 ```java
 import java.util.Scanner;
 
-public class AcasoHuboBuhosAca {
+public class proyecto.AcasoHuboBuhosAca {
 
     static Scanner teclado = new Scanner(System.in);
 
@@ -306,16 +306,16 @@ class AcasoHuboBuhosAcaTest {
     void ValidarYLimpiar() {
         String input = "Acaso Hubo Buhos Aca";
         String expected = "acasohubobuhosaca";
-        String result = AcasoHuboBuhosAca.ValidarYLimpiar(input);
+        String result = proyecto.AcasoHuboBuhosAca.ValidarYLimpiar(input);
         assertEquals(expected, result, "La frase no se limpió correctamente.");
     }
 
     @Test
     void RecorrerPalindromo() {
         String palindromo = "acasohubobuhosaca";
-        assertTrue(AcasoHuboBuhosAca.RecorrerPalindromo(palindromo), "Debe ser un palíndromo.");
+        assertTrue(proyecto.AcasoHuboBuhosAca.RecorrerPalindromo(palindromo), "Debe ser un palíndromo.");
         String noPalindromo = "hola mundo";
-        assertFalse(AcasoHuboBuhosAca.RecorrerPalindromo(noPalindromo), "No debe ser un palíndromo.");
+        assertFalse(proyecto.AcasoHuboBuhosAca.RecorrerPalindromo(noPalindromo), "No debe ser un palíndromo.");
     }
 }
 ```

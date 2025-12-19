@@ -1,4 +1,5 @@
-import java.util.Scanner;
+package proyecto;
+
 public class palindromosJuez {
     static java.util.Scanner in;
     public static boolean casoDePrueba() {
