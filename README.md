@@ -324,7 +324,7 @@ Todos los tests pasaron correctamente.
 ![Pruebas](junit_correcto.jpg)
 ---
 Tambien realice test incorrectos para comprobar el funcionamiento.
-![Pruebas](junit_incorrecto.jpg)
+![Pruebas](junit_incorrect.jpg)
 ---
 
 ## Documentación
