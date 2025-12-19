@@ -6,6 +6,13 @@ public class AcasoHuboBuhosAca {
 
     static Scanner teclado = new Scanner(System.in);
 
+    /**
+     * Esta clase contiene los métodos necesarios para resolver el problema 252 Acaso Hubo Buho Aca - Palíndromos del Concurso ProgramaMe para el proyecto de la asignatura de programacion de 1ºDAW.
+     * @author: Manuela Planelles
+     * @version: 1.0 (19/12/2025)
+     * @see <a href = "https://aceptaelreto.com/problem/statement.php?id=252"/> Acaso Hubo Buho Aca </a>
+     */
+
     public static void main(String[] args) {
         System.out.println("--- DETECTOR DE PALÍNDROMOS ---");
         System.out.println("Escribe XXX para terminar");
@@ -34,6 +41,14 @@ public class AcasoHuboBuhosAca {
         }
     }
 
+    /**
+     * Valída y limpia la frase proporcionada por el usuario.
+     * Revisa si la frase tiene entre 1 y 100 caracteres, y si está bien formada (sin caracteres inválidos o espacios al principio o al final).
+     * Elimina los espacios para facilitar la comprobación del palíndromo.
+     * @param frase
+     * @return La frase limpia y en minúsculas, o null si hay un error de validación.
+     */
+
     static String ValidarYLimpiar(String frase) {
         int longitud = frase.length();
 
@@ -56,7 +71,6 @@ public class AcasoHuboBuhosAca {
                 break;
             }
         }
-
         if (cartInv) {
             return null;
         }
@@ -68,10 +82,16 @@ public class AcasoHuboBuhosAca {
                 limpia = limpia + cart;
             }
         }
-
         limpia = limpia.toLowerCase();
         return limpia;
     }
+
+    /**
+     * Verifica si la cadena de texto proporcionada es un palíndromo.
+     * Compara los caracteres de la cadena desde ambos extremos hacia el centro.
+     * @param limpia
+     * @return true si la cadena es un palíndromo, false en caso contrario.
+     */
 
     static boolean RecorrerPalindromo(String limpia) {
         int i = 0;
@@ -86,7 +106,6 @@ public class AcasoHuboBuhosAca {
             i++;
             j--;
         }
-
         return palindromo;
     }
 }
